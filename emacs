@@ -5,6 +5,9 @@
       package-archives)
 (package-initialize)
 
+(setq my-package-list '(dts-mode evil-tabs elscreen evil goto-chg undo-tree exec-path-from-shell goto-chg ipython jedi auto-complete popup jedi-core python-environment deferred epc ctable concurrent deferred jedi-core python-environment deferred epc ctable concurrent deferred nyan-mode popup python-environment deferred python-mode solarized-theme dash undo-tree))
+(mapc #'package-install my-package-list)
+
 (require 'evil)
 (evil-mode 1)
 (global-evil-tabs-mode t)
