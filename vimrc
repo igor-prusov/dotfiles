@@ -26,7 +26,8 @@ Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'kien/ctrlp.vim'
-Plugin 'corntrace/bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'juneedahamed/vc.vim'
 
 
 Plugin 'molokai'
