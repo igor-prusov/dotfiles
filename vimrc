@@ -33,6 +33,7 @@ Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Rip-Rip/clang_complete'
+Plugin 'chazy/cscope_maps'
 
 
 Plugin 'molokai'
