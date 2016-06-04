@@ -16,8 +16,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'msanders/snipmate.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/python-mode'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'klen/python-mode'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -29,6 +29,10 @@ Plugin 'junegunn/vim-peekaboo'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'juneedahamed/vc.vim'
+Plugin 'keith/swift.vim'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'Rip-Rip/clang_complete'
 
 
 Plugin 'molokai'
@@ -39,13 +43,9 @@ Plugin 'pyte'
 Plugin 'jcf/vim-latex'
 
 
-
-let g:tex_flavor='latex'
-let g:Tex_ViewRule_pdf = 'open -a Preview.app'
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -59,6 +59,17 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "********************Vundle End**************************************
+
+let g:tex_flavor='latex'
+let g:Tex_ViewRule_pdf = 'open -a Preview.app'
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
+let g:pymode_breakpoint = 0
+
+let g:neocomplete#enable_at_startup = 1
+
+let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
 
 " be more liberal about hidden buffers
 set hidden
