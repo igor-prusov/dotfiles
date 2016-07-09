@@ -34,6 +34,8 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'chazy/cscope_maps'
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
 
 
 Plugin 'molokai'
@@ -65,6 +67,7 @@ let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf = 'open -a Preview.app'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
 let g:pymode_breakpoint = 0
+let g:session_autosave = 'no'
 
 let g:neocomplete#enable_at_startup = 1
 
