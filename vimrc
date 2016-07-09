@@ -36,7 +36,9 @@ Plugin 'Rip-Rip/clang_complete'
 Plugin 'chazy/cscope_maps'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 Plugin 'vimwiki/vimwiki'
+Plugin 'Konfekt/FastFold'
 
 
 Plugin 'molokai'
