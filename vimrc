@@ -67,6 +67,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "********************Vundle End**************************************
 
+colorscheme solarized
+
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf = 'open -a Preview.app'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
