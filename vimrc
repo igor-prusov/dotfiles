@@ -39,7 +39,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'vimwiki/vimwiki'
 Plugin 'Konfekt/FastFold'
-Plugin 'justmao945/vim-clang'
+"Plugin 'justmao945/vim-clang'
 
 
 Plugin 'molokai'
