@@ -31,6 +31,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'juneedahamed/vc.vim'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'Rip-Rip/clang_complete'
 Plugin 'chazy/cscope_maps'
@@ -40,6 +41,7 @@ Plugin 'xolox/vim-notes'
 Plugin 'vimwiki/vimwiki'
 Plugin 'Konfekt/FastFold'
 "Plugin 'justmao945/vim-clang'
+Plugin 'osyo-manga/vim-marching'
 
 
 Plugin 'molokai'
@@ -80,6 +82,20 @@ let g:neocomplete#enable_at_startup = 1
 let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+
+let g:marching_enable_neocomplete = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+	  let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_overwrite_completefunc = 1
+  let g:neocomplete#force_omni_input_patterns.c =
+        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+  let g:neocomplete#force_omni_input_patterns.cpp =
+        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+  let g:neocomplete#force_omni_input_patterns.objc =
+        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+  let g:neocomplete#force_omni_input_patterns.objcpp =
+        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " be more liberal about hidden buffers
 set hidden
