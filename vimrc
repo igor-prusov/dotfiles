@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'msanders/snipmate.vim'
+"Plugin 'msanders/snipmate.vim'
 Plugin 'majutsushi/tagbar'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'klen/python-mode'
@@ -32,6 +32,8 @@ Plugin 'juneedahamed/vc.vim'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'Rip-Rip/clang_complete'
 Plugin 'chazy/cscope_maps'
@@ -49,7 +51,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'pyte'
 
 
-Plugin 'jcf/vim-latex'
+"Plugin 'jcf/vim-latex'
 
 
 " All of your Plugins must be added before the following line
@@ -83,6 +85,7 @@ let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 
+" vim-marching and neocomplete 
 let g:marching_enable_neocomplete = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
 	  let g:neocomplete#force_omni_input_patterns = {}
@@ -96,6 +99,24 @@ if !exists('g:neocomplete#force_omni_input_patterns')
         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
   let g:neocomplete#force_omni_input_patterns.objcpp =
         \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+
+" neosnippet
+imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-j>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+  endif
 
 " be more liberal about hidden buffers
 set hidden
