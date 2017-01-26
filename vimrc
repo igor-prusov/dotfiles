@@ -18,6 +18,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'klen/python-mode'
+Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
@@ -25,6 +27,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/syntastic'
 Plugin 'junegunn/goyo.vim'
+Plugin 'bogado/file-line'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/seoul256.vim'
 Plugin 'junegunn/vim-peekaboo'
@@ -34,9 +37,10 @@ Plugin 'juneedahamed/vc.vim'
 Plugin 'keith/swift.vim'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimshell'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
-Plugin 'davidhalter/jedi-vim'
 "Plugin 'Rip-Rip/clang_complete'
 Plugin 'chazy/cscope_maps'
 Plugin 'xolox/vim-session'
@@ -122,6 +126,10 @@ if has('conceal')
 
 " be more liberal about hidden buffers
 set hidden
+" Keep more commands in history
+set history=5000
+" Update buffer if coresponding file changes
+set autoread
 
 syntax on
 
@@ -135,6 +143,8 @@ autocmd FileType arduino map <F1> :!ino serial<CR>
 "*************************************************************
 
 set nocp
+set hlsearch
+set incsearch
 set laststatus=2
 
 filetype plugin on
@@ -151,6 +161,15 @@ autocmd FileType c map <F9> :w <CR> :cd %:p:h/<CR> :make<CR>
 
 "***************************Python****************************
 autocmd FileType python map  <F3> :TagbarToggle<CR>
+
+"***************************Device Tree****************************
+au BufRead,BufNewFile *.dts set filetype=dts
+au BufRead,BufNewFile *.dtsi set filetype=dts
+autocmd Filetype dts setlocal tabstop=4
+autocmd Filetype dts setlocal softtabstop=4
+autocmd Filetype dts setlocal smartindent
+autocmd Filetype dts setlocal noexpandtab
+autocmd Filetype dts setlocal shiftwidth=4
 
 "***************************TASM******************************
 au BufRead,BufNewFile *.ASM setlocal filetype=tasm
@@ -209,3 +228,6 @@ map <leader>x :bd<CR>
 "*****************highlight search results************************
 set hlsearch
 
+"*********************Abbreviations************************
+abbreviate O OpenSession
+source ~/.vim/vimrc_local.vim
