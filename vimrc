@@ -50,8 +50,9 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'Konfekt/FastFold'
 "Plugin 'justmao945/vim-clang'
 Plugin 'osyo-manga/vim-marching'
+Plugin 'pangloss/vim-javascript'
 
-
+Plugin 'tssm/fairyfloss.vim'
 Plugin 'molokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'pyte'
