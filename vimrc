@@ -54,6 +54,7 @@ Plugin 'pangloss/vim-javascript'
 
 Plugin 'tssm/fairyfloss.vim'
 Plugin 'molokai'
+Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'pyte'
 
