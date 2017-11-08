@@ -79,7 +79,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "********************Vundle End**************************************
 
-colorscheme solarized
+colorscheme monokai
 
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf = 'open -a Preview.app'
@@ -199,11 +199,30 @@ command Countsymb %s/[\n\t\ \.\,\:\"]//g <bar> :w<bar>:!wc -m %
 
 
 "*****************Tabulation*********************
-set tabstop=8
-set softtabstop=8
-set smartindent
-set noexpandtab
-set shiftwidth=8
+"set tabstop=8
+"set softtabstop=8
+"set smartindent
+"set noexpandtab
+"set shiftwidth=8
+
+function TabStyle(type)
+	if a:type == "tabs"
+		"echom "kernel"
+		set tabstop=8
+		set noexpandtab
+		set shiftwidth=8
+	elseif a:type == "spaces"
+		"echom "tzsl"
+		set tabstop=4
+		set shiftwidth=4
+		set expandtab
+	else
+		echon "Unknown type: "
+		echom a:type
+	endif
+endfunction
+
+call TabStyle("tabs")
 
 
 "*****************Encodings************************
@@ -232,4 +251,3 @@ set hlsearch
 
 "*********************Abbreviations************************
 abbreviate O OpenSession
-source ~/.vim/vimrc_local.vim
