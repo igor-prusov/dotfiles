@@ -92,6 +92,8 @@ let g:neocomplete#enable_at_startup = 1
 let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+" Make CtrlP ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " vim-marching and neocomplete 
 let g:marching_enable_neocomplete = 1
