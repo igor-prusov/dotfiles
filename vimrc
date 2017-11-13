@@ -201,21 +201,15 @@ command Countsymb %s/[\n\t\ \.\,\:\"]//g <bar> :w<bar>:!wc -m %
 
 
 "*****************Tabulation*********************
-"set tabstop=8
-"set softtabstop=8
 "set smartindent
-"set noexpandtab
-"set shiftwidth=8
 
 function TabStyle(type)
 	if a:type == "tabs"
-		"echom "kernel"
 		set tabstop=8
 		set softtabstop=8
 		set noexpandtab
 		set shiftwidth=8
 	elseif a:type == "spaces"
-		"echom "tzsl"
 		set tabstop=4
 		set softtabstop=4
 		set shiftwidth=4
