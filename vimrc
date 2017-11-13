@@ -249,3 +249,9 @@ set hlsearch
 
 "*********************Abbreviations************************
 abbreviate O OpenSession
+
+"**********************local vimrc*************************
+let local_vimrc="~/.vimrc.local"
+if filereadable(expand(local_vimrc))
+	execute 'source'.fnameescape(local_vimrc)
+endif
