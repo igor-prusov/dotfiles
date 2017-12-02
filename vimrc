@@ -57,6 +57,7 @@ Plugin 'molokai'
 Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'pyte'
+Plugin 'dracula/vim'
 
 
 "Plugin 'jcf/vim-latex'
