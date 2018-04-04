@@ -197,6 +197,12 @@ map <leader>b :CtrlPBuffer<CR>
 "map <C-j> :tabprevious<CR>
 "map <C-k> :tabnext<CR>
 
+"***************Bindings for vimdiff**************************
+nnoremap <expr> <S-up> &diff ? '[c' : '<nop>'
+nnoremap <expr> <S-down> &diff ? ']c' : '<nop>'
+nnoremap <expr> <S-left> &diff ? 'do' : '<nop>'
+nnoremap <expr> <S-right> &diff ? 'dp' : '<nop>'
+
 "*****************ENGLISH_THOUSANDS****************************
 command Countsymb %s/[\n\t\ \.\,\:\"]//g <bar> :w<bar>:!wc -m %
 
