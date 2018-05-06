@@ -96,7 +96,10 @@ let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
 " Make CtrlP ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" vim-marching and neocomplete 
+" Don't locate buffers by default
+let g:bufExplorerFindActive=0
+
+" vim-marching and neocomplete
 let g:marching_enable_neocomplete = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
 	  let g:neocomplete#force_omni_input_patterns = {}
