@@ -51,6 +51,7 @@ Plugin 'Konfekt/FastFold'
 "Plugin 'justmao945/vim-clang'
 Plugin 'osyo-manga/vim-marching'
 Plugin 'pangloss/vim-javascript'
+"Plugin 'airblade/vim-gitgutter'
 
 Plugin 'tssm/fairyfloss.vim'
 Plugin 'molokai'
@@ -160,7 +161,6 @@ filetype plugin on
 autocmd FileType cpp set number
 autocmd FileType cpp map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 autocmd FileType cpp map <F9> :w <CR> :cd %:p:h/<CR> :make<CR>
-autocmd FileType cpp map <F10> :cd %:p:h/<CR> :!./`ls -F \|grep "*" \|sed 's/\*//'`<CR>
 autocmd FileType cpp map <F3> :TagbarToggle<CR>
 
 "***************************C******************************
@@ -192,6 +192,7 @@ au BufRead,BufNewFile *.ASM setlocal softtabstop=8
 map <F3> :TagbarToggle<CR>
 map <F12> :set invnu<CR>
 map <F11> :set invrelativenumber<CR>
+map <F10> :GitGutterToggle<CR>
 map <silent> <F2> :NERDTreeToggle<CR>
 map <C-TAB> <leader>c<space>
 map <leader>b :CtrlPBuffer<CR>
