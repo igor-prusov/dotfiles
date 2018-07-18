@@ -52,6 +52,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'osyo-manga/vim-marching'
 Plugin 'pangloss/vim-javascript'
 "Plugin 'airblade/vim-gitgutter'
+Plugin 'MattesGroeger/vim-bookmarks'
 
 Plugin 'tssm/fairyfloss.vim'
 Plugin 'molokai'
@@ -99,6 +100,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " Don't locate buffers by default
 let g:bufExplorerFindActive=0
+
+"Disable vim-bookmarks default key mappings because they conflict with marks
+let g:bookmark_no_default_key_mappings = 1
+
+"Add key mappings for bookmarks
+nmap <Leader>fa <Plug>BookmarkAnnotate
+nmap <Leader>ft <Plug>BookmarkToggle
 
 " vim-marching and neocomplete
 let g:marching_enable_neocomplete = 1
