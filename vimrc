@@ -268,10 +268,10 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 "*****************Match Hilights***********************
-"Trailing spaces
-nmap <leader>ht :match ExtraWhitespace /\s\+$/<CR>
+"Match trailing spaces
+nmap <leader>mt :match ExtraWhitespace /\s\+$/<CR>
 "Clear highlight
-nmap <leader>hh :match<CR>
+nmap <leader>mm :match<CR>
 
 
 "*****************Delete buffers************************
