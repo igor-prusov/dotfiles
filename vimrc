@@ -220,6 +220,9 @@ nnoremap <expr> <S-right> &diff ? 'dp' : '<nop>'
 command Countsymb %s/[\n\t\ \.\,\:\"]//g <bar> :w<bar>:!wc -m %
 
 
+"*****************Hilight trailing spaces**********************
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+
 "*****************Tabulation*********************
 "set smartindent
 
@@ -263,6 +266,12 @@ map <F7> :emenu Indent.<TAB>
 "*****************invivsible chars************************
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+"*****************Match Hilights***********************
+"Trailing spaces
+nmap <leader>ht :match ExtraWhitespace /\s\+$/<CR>
+"Clear highlight
+nmap <leader>hh :match<CR>
 
 
 "*****************Delete buffers************************
