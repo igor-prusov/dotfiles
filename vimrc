@@ -53,6 +53,7 @@ Plugin 'Konfekt/FastFold'
 Plugin 'osyo-manga/vim-marching'
 Plugin 'pangloss/vim-javascript'
 "Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-rooter'
 Plugin 'MattesGroeger/vim-bookmarks'
 
 Plugin 'tssm/fairyfloss.vim'
