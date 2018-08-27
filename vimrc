@@ -55,6 +55,7 @@ Plugin 'pangloss/vim-javascript'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'airblade/vim-rooter'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'dhruvasagar/vim-table-mode'
 
 Plugin 'tssm/fairyfloss.vim'
 Plugin 'molokai'
