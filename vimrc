@@ -63,6 +63,7 @@ Plugin 'sickill/vim-monokai'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'pyte'
 Plugin 'dracula/vim'
+Plugin 'HiPhish/info.vim'
 
 
 "Plugin 'jcf/vim-latex'
@@ -106,6 +107,8 @@ let g:bufExplorerFindActive=0
 
 "Disable vim-bookmarks default key mappings because they conflict with marks
 let g:bookmark_no_default_key_mappings = 1
+
+let g:infoprg = "/usr/local/opt/texinfo/bin/info"
 
 "Add key mappings for bookmarks
 nmap <Leader>fa <Plug>BookmarkAnnotate
