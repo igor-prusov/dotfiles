@@ -285,9 +285,6 @@ map <leader>x :bd<CR>
 "*****************highlight search results************************
 set hlsearch
 
-"*********************Abbreviations************************
-abbreviate O OpenSession
-
 "**********************local vimrc*************************
 let local_vimrc="~/.vimrc.local"
 if filereadable(expand(local_vimrc))
