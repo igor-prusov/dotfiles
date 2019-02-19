@@ -250,6 +250,13 @@ endfunction
 
 call TabStyle("tabs")
 
+"*****************less.vim config******************
+function LessInitFunc()
+	set readonly
+	set nomodifiable
+	set noswapfile
+endfunction
+
 
 "*****************Encodings************************
 set wildmenu
