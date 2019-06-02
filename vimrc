@@ -60,10 +60,10 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'dhruvasagar/vim-table-mode'
 
 Plug 'tssm/fairyfloss.vim'
-Plug 'molokai'
+Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'altercation/vim-colors-solarized'
-Plug 'pyte'
+Plug 'vim-scripts/pyte'
 Plug 'dracula/vim'
 Plug 'HiPhish/info.vim'
 if g:os == "Darwin"
