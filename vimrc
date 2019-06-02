@@ -1,76 +1,68 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'msanders/snipmate.vim'
-Plugin 'majutsushi/tagbar'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'klen/python-mode'
-Plugin 'nvie/vim-flake8'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'Raimondi/delimitMate'
-"Plugin 'scrooloose/syntastic'
-Plugin 'junegunn/goyo.vim'
-Plugin 'bogado/file-line'
-Plugin 'junegunn/limelight.vim'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'junegunn/vim-peekaboo'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'juneedahamed/vc.vim'
-Plugin 'keith/swift.vim'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimshell'
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-"Plugin 'Rip-Rip/clang_complete'
-Plugin 'chazy/cscope_maps'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'vimwiki/vimwiki'
-Plugin 'Konfekt/FastFold'
-"Plugin 'justmao945/vim-clang'
-"Plugin 'osyo-manga/vim-marching'
-Plugin 'pangloss/vim-javascript'
-"Plugin 'airblade/vim-gitgutter'
-Plugin 'airblade/vim-rooter'
-Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'dhruvasagar/vim-table-mode'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+"Plug 'msanders/snipmate.vim'
+Plug 'majutsushi/tagbar'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'klen/python-mode'
+Plug 'nvie/vim-flake8'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'Raimondi/delimitMate'
+"Plug 'scrooloose/syntastic'
+Plug 'junegunn/goyo.vim'
+Plug 'bogado/file-line'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/vim-peekaboo'
+Plug 'kien/ctrlp.vim'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'juneedahamed/vc.vim'
+Plug 'keith/swift.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimshell'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+"Plug 'Rip-Rip/clang_complete'
+Plug 'chazy/cscope_maps'
+Plug 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'vimwiki/vimwiki'
+Plug 'Konfekt/FastFold'
+"Plug 'justmao945/vim-clang'
+"Plug 'osyo-manga/vim-marching'
+Plug 'pangloss/vim-javascript'
+"Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'dhruvasagar/vim-table-mode'
 
-Plugin 'tssm/fairyfloss.vim'
-Plugin 'molokai'
-Plugin 'sickill/vim-monokai'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'pyte'
-Plugin 'dracula/vim'
-Plugin 'HiPhish/info.vim'
+Plug 'tssm/fairyfloss.vim'
+Plug 'molokai'
+Plug 'sickill/vim-monokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'pyte'
+Plug 'dracula/vim'
+Plug 'HiPhish/info.vim'
 
 
-"Plugin 'jcf/vim-latex'
+"Plug 'jcf/vim-latex'
 
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" Initialize plugin system
+call plug#end()
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
