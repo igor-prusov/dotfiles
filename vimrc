@@ -221,6 +221,8 @@ map <C-TAB> <leader>c<space>
 "map <C-j> :tabprevious<CR>
 "map <C-k> :tabnext<CR>
 
+map <C-p> :FZF<CR>
+
 "***************Bindings for vimdiff**************************
 nnoremap <expr> <S-up> &diff ? '[c' : '<nop>'
 nnoremap <expr> <S-down> &diff ? ']c' : '<nop>'
