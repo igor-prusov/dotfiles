@@ -162,6 +162,8 @@ set hidden
 set history=5000
 " Update buffer if coresponding file changes
 set autoread
+" Fix backspace behavior
+set backspace=indent,eol,start
 
 syntax on
 
