@@ -34,7 +34,6 @@ Plug 'bogado/file-line'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'kien/ctrlp.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'juneedahamed/vc.vim'
 Plug 'keith/swift.vim'
@@ -107,9 +106,6 @@ let g:neocomplete#enable_at_startup = 1
 
 let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-
-" Make CtrlP ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Don't locate buffers by default
 let g:bufExplorerFindActive=0
@@ -220,7 +216,6 @@ map <F11> :set invrelativenumber<CR>
 map <F10> :GitGutterToggle<CR>
 map <silent> <F2> :NERDTreeToggle<CR>
 map <C-TAB> <leader>c<space>
-map <leader>b :CtrlPBuffer<CR>
 "map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
 "map <C-j> :tabprevious<CR>
