@@ -72,6 +72,7 @@ elseif g:os == "Linux"
 	Plug '~/.fzf'
 endif
 Plug 'junegunn/fzf.vim'
+Plug 'junkblocker/patchreview-vim'
 
 
 
