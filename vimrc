@@ -18,7 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'msanders/snipmate.vim'
 Plug 'majutsushi/tagbar'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 "Plug 'klen/python-mode'
 Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
@@ -37,13 +37,13 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'juneedahamed/vc.vim'
 Plug 'keith/swift.vim'
-Plug 'Shougo/neocomplete.vim'
+"Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimshell'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-"Plug 'Rip-Rip/clang_complete'
+"Plug 'xavierd/clang_complete'
 Plug 'chazy/cscope_maps'
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
@@ -53,7 +53,6 @@ Plug 'Konfekt/FastFold'
 "Plug 'justmao945/vim-clang'
 "Plug 'osyo-manga/vim-marching'
 Plug 'pangloss/vim-javascript'
-"Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'dhruvasagar/vim-table-mode'
@@ -72,6 +71,7 @@ elseif g:os == "Linux"
 endif
 Plug 'junegunn/fzf.vim'
 Plug 'junkblocker/patchreview-vim'
+Plug 'itchyny/calendar.vim'
 
 
 
@@ -104,7 +104,7 @@ let g:session_autosave = 'no'
 
 let g:neocomplete#enable_at_startup = 1
 
-let g:clang_library_path="/Library/Developer/CommandLineTools/usr/lib/"
+let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " Don't locate buffers by default
@@ -113,11 +113,13 @@ let g:bufExplorerFindActive=0
 "Disable vim-bookmarks default key mappings because they conflict with marks
 let g:bookmark_no_default_key_mappings = 1
 
-let g:infoprg = "/usr/local/opt/texinfo/bin/info"
+let g:infoprg = "/usr/bin/info"
 
 "Add key mappings for bookmarks
 nmap <Leader>fa <Plug>BookmarkAnnotate
 nmap <Leader>ft <Plug>BookmarkToggle
+
+let g:ycm_show_diagnostics_ui = 0
 
 " vim-marching and neocomplete
 let g:marching_enable_neocomplete = 1
