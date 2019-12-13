@@ -18,7 +18,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'msanders/snipmate.vim'
 Plug 'majutsushi/tagbar'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'klen/python-mode'
 Plug 'nvie/vim-flake8'
 Plug 'davidhalter/jedi-vim'
@@ -307,6 +308,9 @@ nmap <leader>mm :match<CR>
 
 "*****************Delete buffers************************
 map <leader>x :bd<CR>
+
+"*****************CoC mappings *************************
+nmap <leader>cd :CocList diagnostics<CR>
 
 "*****************highlight search results************************
 set hlsearch
