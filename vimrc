@@ -170,7 +170,6 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 autocmd FileType arduino map <F5> :cd %:p:h/..<CR> :!ino build<CR>
-autocmd FileType arduino map <F9> :cd %:p:h/..<CR> :!ino upload<CR>
 autocmd FileType arduino map <F1> :!ino serial<CR>
 "*************************************************************
 
@@ -183,12 +182,10 @@ filetype plugin on
 "***************************C++****************************
 autocmd FileType cpp set number
 autocmd FileType cpp map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-autocmd FileType cpp map <F9> :w <CR> :cd %:p:h/<CR> :make<CR>
 autocmd FileType cpp map <F3> :TagbarToggle<CR>
 
 "***************************C******************************
 autocmd FileType c map <F3> :TagbarToggle<CR>
-autocmd FileType c map <F9> :w <CR> :cd %:p:h/<CR> :make<CR>
 
 "***************************Python****************************
 autocmd FileType python map  <F3> :TagbarToggle<CR>
@@ -266,6 +263,18 @@ function LessInitFunc()
 	set nomodifiable
 	set noswapfile
 endfunction
+
+"****************Termdebug************************
+packadd termdebug
+let g:termdebug_wide = 163
+function Debug()
+	hi debugPC guibg=blue
+	hi debugBreakpoint guibg=red
+	Termdebug
+	:bdelete! debugged\ program
+endfunction
+
+map <F9> :call Debug()<CR>
 
 
 "*****************Encodings************************
