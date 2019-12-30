@@ -22,7 +22,6 @@ Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'klen/python-mode'
 Plug 'nvie/vim-flake8'
-Plug 'davidhalter/jedi-vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
