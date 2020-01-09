@@ -170,7 +170,6 @@ autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 autocmd! BufNewFile,BufRead *.ino setlocal ft=arduino
 
 autocmd FileType arduino map <F5> :cd %:p:h/..<CR> :!ino build<CR>
-autocmd FileType arduino map <F1> :!ino serial<CR>
 "*************************************************************
 
 set nocp
@@ -310,6 +309,12 @@ map <leader>x :bd<CR>
 
 "*****************CoC mappings *************************
 nmap <leader>cd :CocList diagnostics<CR>
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <F1> :CocList symbols<CR>
 
 "*****************highlight search results************************
 set hlsearch
