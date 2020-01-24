@@ -211,7 +211,6 @@ au BufRead,BufNewFile *.ASM setlocal softtabstop=8
 map <F3> :TagbarToggle<CR>
 map <F12> :set invnu<CR>
 map <F11> :set invrelativenumber<CR>
-map <F10> :GitGutterToggle<CR>
 map <silent> <F2> :NERDTreeToggle<CR>
 map <C-TAB> <leader>c<space>
 "map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
@@ -287,8 +286,6 @@ map <F8> :emenu Encoding.<TAB>
 menu Indent.tabs	:call TabStyle("tabs")<CR>
 menu Indent.spaces	:call TabStyle("spaces")<CR>
 map <F7> :emenu Indent.<TAB>
-
-
 
 "*****************air-line************************
 "let g:airline_powerline_fonts = 1
