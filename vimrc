@@ -313,6 +313,18 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <F1> :CocList symbols<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+menu Actions.Rename	<Plug>(coc-rename)
+map <F6> :emenu Actions.<TAB>
 
 "*****************highlight search results************************
 set hlsearch
