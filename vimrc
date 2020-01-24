@@ -56,6 +56,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'airblade/vim-rooter'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'tssm/fairyfloss.vim'
 Plug 'tomasr/molokai'
@@ -253,7 +254,7 @@ function TabStyle(type)
 	endif
 endfunction
 
-call TabStyle("tabs")
+"call TabStyle("tabs")
 
 "*****************less.vim config******************
 function LessInitFunc()
