@@ -1,15 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-if !exists("g:os")
-    if has("win64") || has("win32") || has("win16")
-        let g:os = "Windows"
-    else
-        let g:os = substitute(system('uname'), '\n', '', '')
-    endif
-endif
-
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'gmarik/Vundle.vim'
@@ -58,11 +49,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/pyte'
 Plug 'dracula/vim'
 Plug 'HiPhish/info.vim'
-if g:os == "Darwin"
-	Plug '/usr/local/opt/fzf'
-elseif g:os == "Linux"
-	Plug '~/.fzf'
-endif
+Plug 'junegunn/fzf', {'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
 Plug 'junkblocker/patchreview-vim'
 Plug 'itchyny/calendar.vim'
