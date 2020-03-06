@@ -12,8 +12,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/vimshell'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bogado/file-line'
@@ -72,16 +70,9 @@ filetype plugin indent on    " required
 
 colorscheme monokai
 
-let g:tex_flavor='latex'
-let g:Tex_ViewRule_pdf = 'open -a Preview.app'
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode -file-line-error-style $*'
-let g:pymode_breakpoint = 0
 let g:session_autosave = 'no'
 
 let g:neocomplete#enable_at_startup = 1
-
-let g:clang_library_path='/usr/lib/llvm-3.8/lib'
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " Don't locate buffers by default
 let g:bufExplorerFindActive=0
@@ -94,23 +85,6 @@ let g:infoprg = "/usr/bin/info"
 "Add key mappings for bookmarks
 nmap <Leader>fa <Plug>BookmarkAnnotate
 nmap <Leader>ft <Plug>BookmarkToggle
-
-let g:ycm_show_diagnostics_ui = 0
-
-" vim-marching and neocomplete
-let g:marching_enable_neocomplete = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-	  let g:neocomplete#force_omni_input_patterns = {}
-  endif
-  let g:neocomplete#force_overwrite_completefunc = 1
-  let g:neocomplete#force_omni_input_patterns.c =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-  let g:neocomplete#force_omni_input_patterns.cpp =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-  let g:neocomplete#force_omni_input_patterns.objc =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-  let g:neocomplete#force_omni_input_patterns.objcpp =
-        \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " neosnippet
 imap <C-j>     <Plug>(neosnippet_expand_or_jump)
