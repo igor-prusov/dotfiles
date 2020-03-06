@@ -112,6 +112,9 @@ set history=5000
 set autoread
 " Fix backspace behavior
 set backspace=indent,eol,start
+" For coc.nvim
+set updatetime=300
+set cmdheight=1
 
 syntax on
 
