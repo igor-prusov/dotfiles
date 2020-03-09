@@ -142,6 +142,9 @@ autocmd FileType c map <F3> :TagbarToggle<CR>
 "***************************Python****************************
 autocmd FileType python map  <F3> :TagbarToggle<CR>
 
+"***************************Rust****************************
+autocmd FileType rust let b:dispatch = 'cargo build'
+
 "***************************Device Tree****************************
 au BufRead,BufNewFile *.dts set filetype=dts
 au BufRead,BufNewFile *.dtsi set filetype=dts
