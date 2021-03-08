@@ -9,9 +9,8 @@ Plug 'HiPhish/info.vim'
 Plug 'Konfekt/FastFold'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/unite.vim'
+"Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bogado/file-line'
@@ -19,6 +18,8 @@ Plug 'chazy/cscope_maps'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dracula/vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go'
+Plug 'honza/vim-snippets'
 Plug 'itchyny/calendar.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'juneedahamed/vc.vim'
@@ -86,24 +87,6 @@ let g:infoprg = "/usr/bin/info"
 nmap <Leader>fa <Plug>BookmarkAnnotate
 nmap <Leader>ft <Plug>BookmarkToggle
 
-" neosnippet
-imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-j>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-  endif
-
 " be more liberal about hidden buffers
 set hidden
 " Keep more commands in history
@@ -144,6 +127,8 @@ autocmd FileType python map  <F3> :TagbarToggle<CR>
 
 "***************************Rust****************************
 autocmd FileType rust let b:dispatch = 'cargo build'
+"****************************GO*****************************
+autocmd BufWritePre *go silent :call CocAction('runCommand', 'editor.action.organizeImport')
 
 "***************************Device Tree****************************
 au BufRead,BufNewFile *.dts set filetype=dts
