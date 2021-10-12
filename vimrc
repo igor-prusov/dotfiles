@@ -11,7 +11,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/unite.vim'
 "Plug 'SirVer/ultisnips'
-Plug 'airblade/vim-rooter'
+"Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bogado/file-line'
 Plug 'chazy/cscope_maps'
@@ -50,7 +50,9 @@ Plug 'vim-scripts/pyte'
 Plug 'vimwiki/vimwiki'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
-Plug 'xolox/vim-session'
+"Plug 'xolox/vim-session'
+Plug 'mileszs/ack.vim'
+Plug 'eugen0329/vim-esearch'
 
 " Initialize plugin system
 call plug#end()
@@ -82,6 +84,7 @@ let g:bufExplorerFindActive=0
 let g:bookmark_no_default_key_mappings = 1
 
 let g:infoprg = "/usr/bin/info"
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "Add key mappings for bookmarks
 nmap <Leader>fa <Plug>BookmarkAnnotate
@@ -152,7 +155,7 @@ au BufRead,BufNewFile *.ASM setlocal softtabstop=8
 map <F3> :TagbarToggle<CR>
 map <F12> :set invnu<CR>
 map <F11> :set invrelativenumber<CR>
-map <silent> <F2> :NERDTreeToggle<CR>
+map <silent> <F2> :CocCommand explorer<CR>
 map <C-TAB> <leader>c<space>
 "map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
@@ -194,7 +197,7 @@ function TabStyle(type)
 	endif
 endfunction
 
-"call TabStyle("tabs")
+call TabStyle("spaces")
 
 "*****************less.vim config******************
 function LessInitFunc()
@@ -245,6 +248,8 @@ nmap <leader>mm :match<CR>
 "*****************Delete buffers************************
 map <leader>x :bd<CR>
 
+"***************Fugitive mappings **********************
+nmap <leader>fb :Git blame <CR>
 "*****************CoC mappings *************************
 nmap <leader>cd :CocList diagnostics<CR>
 " Remap keys for gotos
