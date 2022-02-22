@@ -11,7 +11,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/unite.vim'
 "Plug 'SirVer/ultisnips'
-"Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bogado/file-line'
 Plug 'chazy/cscope_maps'
@@ -19,9 +18,9 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'dracula/vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 Plug 'itchyny/calendar.vim'
-Plug 'jlanzarotta/bufexplorer'
+"Plug 'jlanzarotta/bufexplorer'
 Plug 'juneedahamed/vc.vim'
 Plug 'junegunn/fzf', {'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -32,7 +31,6 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'junkblocker/patchreview-vim'
 Plug 'keith/swift.vim'
 Plug 'majutsushi/tagbar'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvie/vim-flake8'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
@@ -43,7 +41,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tssm/fairyfloss.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/pyte'
@@ -53,6 +50,22 @@ Plug 'xolox/vim-notes'
 "Plug 'xolox/vim-session'
 Plug 'mileszs/ack.vim'
 Plug 'eugen0329/vim-esearch'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'rafamadriz/friendly-snippets'
+
+Plug 'nvim-lua/plenary.nvim'
+"Plug 'lewis6991/gitsigns.nvim'
+Plug 'tanvirtin/vgit.nvim',
+
 
 " Initialize plugin system
 call plug#end()
@@ -75,7 +88,108 @@ colorscheme monokai
 
 let g:session_autosave = 'no'
 
-let g:neocomplete#enable_at_startup = 1
+" completion config
+set completeopt=menu,menuone,noselect
+
+lua <<EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
+    mapping = {
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping({
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      }),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    },
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      { name = 'path' },
+      -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+  -- cmp.setup.cmdline('/', {
+  --  sources = {
+  --    { name = 'buffer' }
+  --  }
+  --})
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  -- cmp.setup.cmdline(':', {
+  --   sources = cmp.config.sources({
+  --     { name = 'path' }
+  --   }, {
+  --     { name = 'cmdline' }
+  --   })
+  -- })
+  -- Mappings.
+  -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+  local opts = { noremap=true, silent=true }
+  vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+  -- Use an on_attach function to only map the following keys
+  -- after the language server attaches to the current buffer
+  local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  end
+
+
+  -- Setup lspconfig.
+  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  require('lspconfig')['clangd'].setup {
+    capabilities = capabilities,
+    cmd = {"clangd-10", "--background-index", "--compile-commands-dir=./" },
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150
+    }
+
+  }
+
+  vim.diagnostic.config({virtual_text = false})
+EOF
 
 " Don't locate buffers by default
 let g:bufExplorerFindActive=0
@@ -86,10 +200,6 @@ let g:bookmark_no_default_key_mappings = 1
 let g:infoprg = "/usr/bin/info"
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-"Add key mappings for bookmarks
-nmap <Leader>fa <Plug>BookmarkAnnotate
-nmap <Leader>ft <Plug>BookmarkToggle
-
 " be more liberal about hidden buffers
 set hidden
 " Keep more commands in history
@@ -99,8 +209,8 @@ set autoread
 " Fix backspace behavior
 set backspace=indent,eol,start
 " For coc.nvim
-set updatetime=300
-set cmdheight=1
+"set updatetime=300
+"set cmdheight=1
 
 syntax on
 
@@ -130,8 +240,6 @@ autocmd FileType python map  <F3> :TagbarToggle<CR>
 
 "***************************Rust****************************
 autocmd FileType rust let b:dispatch = 'cargo build'
-"****************************GO*****************************
-autocmd BufWritePre *go silent :call CocAction('runCommand', 'editor.action.organizeImport')
 
 "***************************Device Tree****************************
 au BufRead,BufNewFile *.dts set filetype=dts
@@ -155,7 +263,7 @@ au BufRead,BufNewFile *.ASM setlocal softtabstop=8
 map <F3> :TagbarToggle<CR>
 map <F12> :set invnu<CR>
 map <F11> :set invrelativenumber<CR>
-map <silent> <F2> :CocCommand explorer<CR>
+map <silent> <F2> :NERDTreeToggle<CR>
 map <C-TAB> <leader>c<space>
 "map <C-F12> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 
@@ -169,9 +277,6 @@ nnoremap <expr> <S-up> &diff ? '[c' : '<nop>'
 nnoremap <expr> <S-down> &diff ? ']c' : '<nop>'
 nnoremap <expr> <S-left> &diff ? 'do' : '<nop>'
 nnoremap <expr> <S-right> &diff ? 'dp' : '<nop>'
-
-"*****************ENGLISH_THOUSANDS****************************
-command Countsymb %s/[\n\t\ \.\,\:\"]//g <bar> :w<bar>:!wc -m %
 
 
 "*****************Hilight trailing spaces**********************
@@ -197,7 +302,7 @@ function TabStyle(type)
 	endif
 endfunction
 
-call TabStyle("spaces")
+call TabStyle("tabs")
 
 "*****************less.vim config******************
 function LessInitFunc()
@@ -245,32 +350,16 @@ nmap <leader>mt :match ExtraWhitespace /\s\+$/<CR>
 nmap <leader>mm :match<CR>
 
 
-"*****************Delete buffers************************
+"*******************Buffers*****************************
+"Delete buffers
 map <leader>x :bd<CR>
+"List buffers with FZF
+nmap <leader>be :Buffers<CR>
 
-"***************Fugitive mappings **********************
-nmap <leader>fb :Git blame <CR>
-"*****************CoC mappings *************************
-nmap <leader>cd :CocList diagnostics<CR>
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <F1> :CocList symbols<CR>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-menu Actions.Rename	<Plug>(coc-rename)
-map <F6> :emenu Actions.<TAB>
-
+"***************Git**********************
+lua << EOF
+require('vgit').setup()
+EOF
 "*****************highlight search results************************
 set hlsearch
 
