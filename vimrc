@@ -20,7 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
 "Plug 'honza/vim-snippets'
 Plug 'itchyny/calendar.vim'
-"Plug 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'juneedahamed/vc.vim'
 Plug 'junegunn/fzf', {'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -63,9 +63,12 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
 
 Plug 'nvim-lua/plenary.nvim'
-"Plug 'lewis6991/gitsigns.nvim'
-Plug 'tanvirtin/vgit.nvim',
+Plug 'lewis6991/gitsigns.nvim'
+"Plug 'tanvirtin/vgit.nvim',
+"Plug 'airblade/vim-gitgutter'
 
+"FZF and LSP integration
+Plug 'gfanto/fzf-lsp.nvim'
 
 " Initialize plugin system
 call plug#end()
@@ -189,6 +192,8 @@ lua <<EOF
   }
 
   vim.diagnostic.config({virtual_text = false})
+
+  require('gitsigns').setup()
 EOF
 
 " Don't locate buffers by default
@@ -354,12 +359,9 @@ nmap <leader>mm :match<CR>
 "Delete buffers
 map <leader>x :bd<CR>
 "List buffers with FZF
-nmap <leader>be :Buffers<CR>
+"nmap <leader>be :Buffers<CR>
+"
 
-"***************Git**********************
-lua << EOF
-require('vgit').setup()
-EOF
 "*****************highlight search results************************
 set hlsearch
 
