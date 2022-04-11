@@ -58,6 +58,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
+Plug 'p00f/clangd_extensions.nvim'
+
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
@@ -181,14 +183,15 @@ lua <<EOF
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['clangd'].setup {
-    capabilities = capabilities,
-    cmd = {"clangd-10", "--background-index", "--compile-commands-dir=./" },
-    on_attach = on_attach,
-    flags = {
-        debounce_text_changes = 150
-    }
-
+  require('clangd_extensions').setup {
+    server = {
+      capabilities = capabilities,
+      cmd = {"/home/19836454/opt/clangd_13.0.0/bin/clangd", "--background-index", "--compile-commands-dir=./" },
+      on_attach = on_attach,
+      flags = {
+          debounce_text_changes = 150
+      }
+    },
   }
 
   vim.diagnostic.config({virtual_text = false})
