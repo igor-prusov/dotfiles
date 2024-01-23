@@ -1,0 +1,21 @@
+[submodule "nvim-site/pack/plugins/start/bufexplorer"]
+	path = nvim-site/pack/plugins/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "nvim-site/pack/plugins/start/fzf"]
+	path = nvim-site/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "nvim-site/pack/plugins/start/fzf.vim"]
+	path = nvim-site/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "nvim-site/pack/plugins/start/gitsigns.nvim"]
+	path = nvim-site/pack/plugins/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "nvim-site/pack/plugins/start/nerdtree"]
+	path = nvim-site/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "nvim-site/pack/plugins/start/tagbar"]
+	path = nvim-site/pack/plugins/start/tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule "nvim-site/pack/plugins/start/vim-fugitive"]
+	path = nvim-site/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
