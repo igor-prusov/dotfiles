@@ -19,3 +19,6 @@
 [submodule "nvim-site/pack/plugins/start/vim-fugitive"]
 	path = nvim-site/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "nvim-site/pack/plugins/start/undotree"]
+	path = nvim-site/pack/plugins/start/undotree
+	url = https://github.com/mbbill/undotree
