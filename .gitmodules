@@ -22,3 +22,6 @@
 [submodule "nvim-site/pack/plugins/start/undotree"]
 	path = nvim-site/pack/plugins/start/undotree
 	url = https://github.com/mbbill/undotree
+[submodule "nvim-site/pack/plugins/start/nvim-lspconfig"]
+	path = nvim-site/pack/plugins/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
