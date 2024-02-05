@@ -25,3 +25,21 @@
 [submodule "nvim-site/pack/plugins/start/nvim-lspconfig"]
 	path = nvim-site/pack/plugins/start/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim-site/pack/plugins/start/nvim-cmp"]
+	path = nvim-site/pack/plugins/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp/
+[submodule "nvim-site/pack/plugins/start/cmp-nvim-lsp"]
+	path = nvim-site/pack/plugins/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp/
+[submodule "nvim-site/pack/plugins/start/cmp-buffer"]
+	path = nvim-site/pack/plugins/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer/
+[submodule "nvim-site/pack/plugins/start/cmp-path"]
+	path = nvim-site/pack/plugins/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path/
+[submodule "nvim-site/pack/plugins/start/LuaSnip"]
+	path = nvim-site/pack/plugins/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "nvim-site/pack/plugins/start/cmp_luasnip"]
+	path = nvim-site/pack/plugins/start/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip

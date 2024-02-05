@@ -43,3 +43,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+local cmp = require('cmp')
+
+cmp.setup({
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+
+	},{
+		{ name = 'buffer' },
+	})
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require('lspconfig')['clangd'].setup {
+	capabilities = capabilities
+}
