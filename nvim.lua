@@ -1,7 +1,7 @@
 vim.keymap.set('','<F2>', '<cmd>NERDTreeToggle<CR>')
 vim.keymap.set('','<F3>', '<cmd>TagbarToggle<CR>')
 vim.keymap.set('','<F4>', '<cmd>UndotreeToggle<CR>')
-vim.keymap.set('','<C-p>', '<cmd>FZF<CR>')
+vim.keymap.set('','<C-p>', '<cmd>Telescope git_files<CR>')
 
 require('gitsigns').setup()
 
@@ -56,3 +56,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['clangd'].setup {
 	capabilities = capabilities
 }
+
+local telescope_builtin = require('telescope.builtin')
+
+vim.api.nvim_create_user_command('RG', function()
+	telescope_builtin.live_grep{}
+end, {})
