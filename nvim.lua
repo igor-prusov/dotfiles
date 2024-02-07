@@ -1,6 +1,7 @@
 vim.keymap.set('','<F2>', '<cmd>NERDTreeToggle<CR>')
 vim.keymap.set('','<F3>', '<cmd>TagbarToggle<CR>')
 vim.keymap.set('','<F4>', '<cmd>UndotreeToggle<CR>')
+vim.keymap.set('','<F12>', '<cmd>set invnumber<CR>')
 vim.keymap.set('','<C-p>', '<cmd>Telescope git_files<CR>')
 
 require('gitsigns').setup()
@@ -62,3 +63,6 @@ local telescope_builtin = require('telescope.builtin')
 vim.api.nvim_create_user_command('RG', function()
 	telescope_builtin.live_grep{}
 end, {})
+
+-- BufExplorer: Don't locate buffers by default
+vim.g.bufExplorerFindActive = 0
