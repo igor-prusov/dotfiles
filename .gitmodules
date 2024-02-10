@@ -58,3 +58,6 @@
 [submodule "nvim-site/pack/plugins/start/kanagawa.nvim"]
 	path = nvim-site/pack/plugins/start/kanagawa.nvim
 	url = https://github.com/rebelot/kanagawa.nvim.git
+[submodule "nvim-site/pack/plugins/start/nerdcommenter"]
+	path = nvim-site/pack/plugins/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
