@@ -12,8 +12,10 @@ vim.cmd.set("mouse=")
 vim.keymap.set('','<leader>x', '<cmd>bdelete<CR>')
 
 local lspconfig = require('lspconfig')
-
-lspconfig.clangd.setup {}
+lspconfig.clangd.setup {
+	capabilities = require('cmp_nvim_lsp').default_capabilities()
+}
+lspconfig.rust_analyzer.setup {}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -52,11 +54,6 @@ cmp.setup({
 		{ name = 'buffer' },
 	})
 })
-
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['clangd'].setup {
-	capabilities = capabilities
-}
 
 local telescope_builtin = require('telescope.builtin')
 
