@@ -68,3 +68,5 @@ end, {})
 
 -- BufExplorer: Don't locate buffers by default
 vim.g.bufExplorerFindActive = 0
+
+require('nvim-treesitter.configs').setup{}

@@ -61,3 +61,6 @@
 [submodule "nvim-site/pack/plugins/start/nerdcommenter"]
 	path = nvim-site/pack/plugins/start/nerdcommenter
 	url = https://github.com/preservim/nerdcommenter.git
+[submodule "nvim-site/pack/plugins/start/nvim-treesitter"]
+	path = nvim-site/pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
