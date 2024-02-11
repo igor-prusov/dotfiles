@@ -42,6 +42,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local cmp = require('cmp')
 
 cmp.setup({
+	snippet = {
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body)
+		end,
+	},
 	window = {
 	},
 	mapping = cmp.mapping.preset.insert({
