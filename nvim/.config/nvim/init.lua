@@ -1,3 +1,4 @@
+vim.keymap.set('','<F1>', '<cmd>Telescope man_pages sections=ALL<CR>')
 vim.keymap.set('','<F2>', '<cmd>NERDTreeToggle<CR>')
 vim.keymap.set('','<F3>', '<cmd>TagbarToggle<CR>')
 vim.keymap.set('','<F4>', '<cmd>UndotreeToggle<CR>')
@@ -70,3 +71,9 @@ end, {})
 vim.g.bufExplorerFindActive = 0
 
 require('nvim-treesitter.configs').setup{}
+
+require('kanagawa').setup {
+	commentStyle = {
+		italic = false
+	}
+}
