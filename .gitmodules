@@ -1,0 +1,66 @@
+[submodule "nvim-site/pack/plugins/start/bufexplorer"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "nvim-site/pack/plugins/start/fzf"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "nvim-site/pack/plugins/start/fzf.vim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "nvim-site/pack/plugins/start/gitsigns.nvim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim.git
+[submodule "nvim-site/pack/plugins/start/nerdtree"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "nvim-site/pack/plugins/start/tagbar"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule "nvim-site/pack/plugins/start/vim-fugitive"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "nvim-site/pack/plugins/start/undotree"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "nvim-site/pack/plugins/start/nvim-lspconfig"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim-site/pack/plugins/start/nvim-cmp"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp/
+[submodule "nvim-site/pack/plugins/start/cmp-nvim-lsp"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp/
+[submodule "nvim-site/pack/plugins/start/cmp-buffer"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer/
+[submodule "nvim-site/pack/plugins/start/cmp-path"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path/
+[submodule "nvim-site/pack/plugins/start/LuaSnip"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip
+[submodule "nvim-site/pack/plugins/start/cmp_luasnip"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip
+[submodule "nvim-site/pack/plugins/start/cmp-vsnip"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip
+[submodule "nvim-site/pack/plugins/start/vim-vsnip"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
+[submodule "nvim-site/pack/plugins/start/plenary.nvim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "nvim-site/pack/plugins/start/telescope.nvim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "nvim-site/pack/plugins/start/kanagawa.nvim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/kanagawa.nvim
+	url = https://github.com/rebelot/kanagawa.nvim.git
+[submodule "nvim-site/pack/plugins/start/nerdcommenter"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "nvim-site/pack/plugins/start/nvim-treesitter"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
