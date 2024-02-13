@@ -1,0 +1,9 @@
+% docker
+
+# Inspect volume with busybox
+docker run -it --rm --mount source=<volume_name>,target=/data busybox
+
+$ image_id: docker images --- --headers 1 --column 3
+$ container_id: docker ps --- --headers 1 --column 1
+$ volume_name: docker volume ls --- --headers 1 --column 2
+
