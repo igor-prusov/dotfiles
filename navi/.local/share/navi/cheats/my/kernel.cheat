@@ -1,0 +1,11 @@
+% kernel
+
+# Run Device Tree bindings checks (yaml)
+ARCH=<target_arch> make -j dt_binding_check DT_SCHEMA_FILES=<schema>
+
+# Run Device Tree schema checks (dtb)
+ARCH=<target_arch> make -j CHECK_DTBS=y DT_SCHEMA_FILES=<schema> <filename>
+
+$ target_arch: find arch/ -name dts | cut -d '/' -f2
+
+$ filename: find arch/arm64/boot/dts/ -name *.dts |cut -d '/' -f5- |sed 's/\.dts$/\.dtb/'
