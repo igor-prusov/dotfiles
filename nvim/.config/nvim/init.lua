@@ -61,10 +61,17 @@ cmp.setup({
 	})
 })
 
+local telescope= require('telescope')
+telescope.load_extension('live_grep_args')
+
 local telescope_builtin = require('telescope.builtin')
 
 vim.api.nvim_create_user_command('RG', function()
 	telescope_builtin.live_grep{}
+end, {})
+
+vim.api.nvim_create_user_command('RGA', function()
+	telescope.extensions.live_grep_args.live_grep_args()
 end, {})
 
 -- BufExplorer: Don't locate buffers by default
