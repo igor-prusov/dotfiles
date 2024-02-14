@@ -67,3 +67,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/plugins/start/telescope-live-grep-args.nvim"]
 	path = nvim/.local/share/nvim/site/pack/plugins/start/telescope-live-grep-args.nvim
 	url = https://github.com/nvim-telescope/telescope-live-grep-args.nvim
+[submodule "neomutt"]
+	path = neomutt
+	url = git@github.com:igor-prusov/neomutt_config.git
