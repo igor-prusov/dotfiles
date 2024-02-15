@@ -10,6 +10,12 @@ require('gitsigns').setup()
 vim.cmd.colorscheme('kanagawa-wave')
 vim.cmd.set("mouse=")
 
+vim.opt.listchars = {
+	tab = "▸ ",
+	lead = '.',
+	trail = '.',
+}
+
 vim.keymap.set('','<leader>x', '<cmd>bdelete<CR>')
 
 local lspconfig = require('lspconfig')
