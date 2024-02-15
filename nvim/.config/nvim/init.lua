@@ -7,7 +7,7 @@ vim.keymap.set('','<C-p>', '<cmd>Telescope git_files<CR>')
 
 require('gitsigns').setup()
 
-vim.cmd.colorscheme('habamax')
+vim.cmd.colorscheme('kanagawa-wave')
 vim.cmd.set("mouse=")
 
 vim.keymap.set('','<leader>x', '<cmd>bdelete<CR>')
