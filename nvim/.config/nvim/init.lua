@@ -28,7 +28,18 @@ local lspconfig = require('lspconfig')
 lspconfig.clangd.setup {
 	capabilities = require('cmp_nvim_lsp').default_capabilities()
 }
-lspconfig.rust_analyzer.setup {}
+lspconfig.rust_analyzer.setup {
+	settings = {
+		['rust-analyzer'] = {
+			check = {
+				command = "clippy";
+			},
+			diagnostics = {
+				enable = true;
+			}
+		}
+	}
+}
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
