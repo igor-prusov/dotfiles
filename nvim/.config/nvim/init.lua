@@ -2,6 +2,7 @@ vim.keymap.set('','<F1>', '<cmd>Telescope man_pages sections=ALL<CR>')
 vim.keymap.set('','<F2>', '<cmd>NERDTreeToggle<CR>')
 vim.keymap.set('','<F3>', '<cmd>TagbarToggle<CR>')
 vim.keymap.set('','<F4>', '<cmd>UndotreeToggle<CR>')
+vim.keymap.set('','<F9>', '<cmd>TroubleToggle<CR>')
 vim.keymap.set('','<F12>', '<cmd>set invnumber<CR>')
 vim.keymap.set('','<C-p>', '<cmd>Telescope git_files<CR>')
 vim.keymap.set('n', '<C-j>', (function()
@@ -12,6 +13,9 @@ vim.keymap.set('n', '<C-k>', (function()
 end))
 
 require('gitsigns').setup()
+require('trouble').setup {
+	icons = false,
+}
 
 vim.cmd.colorscheme('kanagawa-wave')
 vim.cmd.set("mouse=")
