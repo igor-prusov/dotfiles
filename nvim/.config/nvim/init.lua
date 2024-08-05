@@ -45,6 +45,7 @@ lspconfig.rust_analyzer.setup {
 	}
 }
 
+--vim.lsp.set_log_level('info')
 vim.api.nvim_create_autocmd('FileType', {
 	pattern = "dts",
 	callback = function (ev)
