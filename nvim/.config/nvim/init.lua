@@ -17,7 +17,6 @@ require('trouble').setup {
 	icons = false,
 }
 
-vim.cmd.colorscheme('kanagawa-wave')
 vim.cmd.set("mouse=")
 
 vim.opt.listchars = {
@@ -118,8 +117,7 @@ vim.g.bufExplorerFindActive = 0
 
 require('nvim-treesitter.configs').setup{}
 
-require('kanagawa').setup {
-	commentStyle = {
-		italic = false
-	}
-}
+vim.cmd[[packadd everforest]]
+vim.g.everforest_diagnostic_text_highlight = 1
+vim.cmd[[set termguicolors]]
+vim.cmd[[colorscheme everforest]]
