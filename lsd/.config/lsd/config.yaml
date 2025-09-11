@@ -1,0 +1,10 @@
+classic: false
+
+color:
+  when: auto
+  theme: custom
+
+date: '+%d %b %y %X'
+
+icons:
+  when: never
