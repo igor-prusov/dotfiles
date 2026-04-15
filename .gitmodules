@@ -76,3 +76,12 @@
 [submodule "nvim/.local/share/nvim/site/pack/plugins/start/everforest"]
 	path = nvim/.local/share/nvim/site/pack/plugins/start/everforest
 	url = https://github.com/sainnhe/everforest.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/vim-synthvawe84"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/vim-synthvawe84
+	url = https://github.com/artanikin/vim-synthwave84.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/rosepine"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/rosepine
+	url = https://github.com/rose-pine/neovim.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/gruvbox"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
