@@ -1,0 +1,12 @@
+# How to use:
+#
+# if [ -f ${HOME}/.aliases ]; then
+#	source ${HOME}/.aliases
+# fi
+#
+alias gs='git status'
+alias gd='git diff'
+alias gb='git branch -vv'
+alias gl='git log'
+
+alias vim='nvim'
