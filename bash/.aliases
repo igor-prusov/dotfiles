@@ -8,5 +8,6 @@ alias gs='git status'
 alias gd='git diff'
 alias gb='git branch -vv'
 alias gl='git log'
+alias gt='git tag -n1'
 
 alias vim='nvim'
