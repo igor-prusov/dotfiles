@@ -115,7 +115,7 @@ end, {})
 -- BufExplorer: Don't locate buffers by default
 vim.g.bufExplorerFindActive = 0
 
-require('nvim-treesitter.configs').setup{}
+require('nvim-treesitter').setup{}
 
 --vim.cmd[[packadd everforest]]
 --vim.g.everforest_diagnostic_text_highlight = 1
